@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>数据 - AdminLTE2定制版</title>
+<title>日志查看 - AdminLTE2定制版</title>
 <meta name="description" content="AdminLTE2定制版">
 <meta name="keywords" content="AdminLTE2定制版">
 
@@ -63,7 +63,7 @@
 	href="${pageContext.request.contextPath}/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini">
 
 	<div class="wrapper">
 
@@ -147,7 +147,7 @@
 									<tr>
 										<td><input name="ids" type="checkbox"></td>
 										<td>${syslog.id}</td>
-										<td>${syslog.visitTimeStr }</td>
+										<td>${syslog.visitTime.toLocaleString() }</td>
 										<td>${syslog.username }</td>
 										<td>${syslog.ip }</td>
 										<td>${syslog.url}</td>
@@ -227,13 +227,7 @@
 		<!-- 内容区域 /-->
 
 		<!-- 底部导航 -->
-		<footer class="main-footer">
-		<div class="pull-right hidden-xs">
-			<b>Version</b> 1.0.8
-		</div>
-		<strong>Copyright &copy; 2014-2017 <a
-			href="http://www.itcast.cn">研究院研发部</a>.
-		</strong> All rights reserved. </footer>
+		<jsp:include page="footer.jsp"/>
 		<!-- 底部导航 /-->
 
 	</div>
