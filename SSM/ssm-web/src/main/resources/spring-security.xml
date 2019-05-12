@@ -8,11 +8,9 @@
     http://www.springframework.org/schema/security/spring-security.xsd">
 
     <!--开启jsr250权限配置-->
-    <!-- 关闭
-    <security:global-method-security jsr250-annotations="enabled"/>
-    -->
     <!--开启 @Secured 注解权限配置-->
-    <security:global-method-security secured-annotations="enabled"/>
+    <!--开启 PrePost-Annotation 注解权限配置-->
+    <security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled" pre-post-annotations="enabled"/>
 
     <!-- 配置不拦截的资源 -->
     <security:http pattern="/pages/login.jsp" security="none"/>
