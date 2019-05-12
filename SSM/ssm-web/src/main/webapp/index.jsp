@@ -4,7 +4,6 @@
 <header>
     <script>
         $(function(){
-
             location.href="${pageContext.request.contextPath}/pages/main.jsp"
         })
     </script>

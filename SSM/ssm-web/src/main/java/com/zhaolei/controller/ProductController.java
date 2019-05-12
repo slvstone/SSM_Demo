@@ -3,6 +3,7 @@ package com.zhaolei.controller;
 import com.zhaolei.domain.Product;
 import com.zhaolei.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,6 +25,8 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping("/findAll.do")
+    //添加@Secured权限注解
+    @Secured("ROLE_ADMIN")
     public ModelAndView findAll() throws Exception{
         ModelAndView mv = new ModelAndView();
         List<Product> products = productService.findAll();

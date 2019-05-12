@@ -169,7 +169,7 @@
       <artifactId>ojdbc</artifactId>
       <version>14</version>
     </dependency>
-
+    <!--jsr-250权限配置依赖-->
     <dependency>
       <groupId>javax.annotation</groupId>
       <artifactId>jsr250-api</artifactId>

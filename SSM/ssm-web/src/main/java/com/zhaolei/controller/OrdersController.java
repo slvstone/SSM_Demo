@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 /**
@@ -36,6 +37,8 @@ public class OrdersController {
     }*/
     //分页findAll.do
     @RequestMapping("/findAll.do")
+    //开启jsr-250权限注解配置
+    @RolesAllowed("ADMIN")
     public ModelAndView findByPage(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
                                 @RequestParam(name = "pageSize", required = true, defaultValue = "4") Integer pageSize) throws Exception{
         List<Order> ordersList = ordersService.findAllByPage(page, pageSize);

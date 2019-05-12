@@ -62,6 +62,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!--添加错误页面跳转-->
+    <error-page>
+        <error-code>403</error-code>
+        <location>/pages/403.jsp</location>
+    </error-page>
+
     <!--配置启动页面-->
     <welcome-file-list>
         <welcome-file>admin.html</welcome-file>
