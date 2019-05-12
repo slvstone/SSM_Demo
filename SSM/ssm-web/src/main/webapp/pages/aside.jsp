@@ -1,3 +1,4 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -10,7 +11,10 @@
 				<img src="${pageContext.request.contextPath}/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 			</div>
 			<div class="pull-left info">
-				<p>李元芳</p>
+				<p>
+					<%--动态显示当前用户名--%>
+					<security:authentication property="principal.username"/>
+				</p>
 				<a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
 			</div>
 		</div>
@@ -40,11 +44,14 @@
 				</a>
 				<ul class="treeview-menu">
 
+					<%--设置权限非管理员看不到用户管理菜单--%>
+					<security:authorize access="hasRole('ADMIN')">
 					<li id="system-setting">
 						<a href="${pageContext.request.contextPath}/user/findAll.do">
 							<i class="fa fa-user"></i> 用户管理
 						</a>
 					</li>
+					</security:authorize>
 
 					<li id="system-setting">
 						<a href="${pageContext.request.contextPath}/role/findAll.do">

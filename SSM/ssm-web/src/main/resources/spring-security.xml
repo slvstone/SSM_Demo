@@ -56,6 +56,8 @@
 
     <!-- 配置加密类 -->
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+    <!--添加expressionHandler 用于开启权限注解express支持-->
+    <bean id="expressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"></bean>
 
     <!--提供了入门的方式，在内存中存入用户名和密码 -->
     <!--<security:authentication-manager>
